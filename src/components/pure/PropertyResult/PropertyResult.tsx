@@ -54,13 +54,13 @@ export const PropertyResult = ({
           {promotionTitle && (
             <Typography
               position="absolute"
-              top="7px"
+              top="10px"
               left="0"
-              p="10px"
+              p="7px"
               fontWeight="700"
               bgcolor="#fff"
               color="#cb0001"
-              fontSize="12px"
+              fontSize="15px"
             >
               {promotionTitle}
             </Typography>
