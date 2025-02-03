@@ -20,7 +20,8 @@
       "@/components/*": ["src/components/*"],
       "@/api/*": ["src/api/*"],
       "@/consts": ["src/consts"],
-      "@/types": ["src/types"]
+      "@/types": ["src/types"],
+      "@/utils/*": ["src/utils/*"]
     },
     "plugins": [
       {

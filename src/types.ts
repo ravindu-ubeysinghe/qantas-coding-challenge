@@ -14,10 +14,7 @@ export type Property = {
     // NOTE: Assuming that this is the only image type available for now.
     imageType: "PRIMARY";
   };
-  rating: {
-    ratingValue: number;
-    ratingType: "star" | "self";
-  };
+  rating: Rating;
 };
 
 export type Offer = {
@@ -26,15 +23,19 @@ export type Offer = {
     type: "MEMBER" | "CAMPAIGN";
   };
   name: string;
-  displayPrice: {
-    amount: number;
-    currency: "AUD";
-  };
-  savings: {
-    amount: number;
-    currency: "AUD";
-  } | null;
+  displayPrice: Price;
+  savings: Price | null;
   cancellationOption: {
     cancellationType: "NOT_REFUNDABLE" | "FREE_CANCELLATION";
   };
+};
+
+export type Price = {
+  amount: number;
+  currency: "AUD";
+};
+
+export type Rating = {
+  ratingValue: number;
+  ratingType: "star" | "self";
 };
