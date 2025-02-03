@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 
 export const Header = () => {
   return (
-    <Box width="100%">
+    <Box width="100%" mb="20px">
       <Box maxWidth="200px" position="relative">
         <img
           alt="Qantas Hotels"

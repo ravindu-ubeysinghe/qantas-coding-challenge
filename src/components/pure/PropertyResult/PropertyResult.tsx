@@ -36,6 +36,8 @@ export const PropertyResult = ({
 }: PropertyResultProps) => {
   return (
     <Box
+      itemScope
+      itemType="https://schema.org/Hotel"
       display="grid"
       gridTemplateColumns={{ sm: "200px 1fr" }}
       columnGap={{ sm: "30px" }}
@@ -90,6 +92,7 @@ export const PropertyResult = ({
           flexDirection={{ xs: "column", sm: "row" }}
         >
           <Typography
+            itemProp="name"
             fontSize={{ xs: "20px", md: "25px" }}
             overflow="hidden"
             whiteSpace={{ sm: "pre-line", md: "nowrap" }}
@@ -99,14 +102,24 @@ export const PropertyResult = ({
             {title}
           </Typography>
           {rating && (
-            <Rating
-              icon={rating.ratingType === "self" ? <Circle /> : <Star />}
-              value={rating.ratingValue}
-              readOnly
-              sx={{
-                color: "#f4e900",
-              }}
-            />
+            <Box
+              itemProp="starRating"
+              itemScope
+              itemType="https://schema.org/Rating"
+            >
+              <Rating
+                itemProp="ratingValue"
+                content={rating.ratingValue.toString()}
+                icon={rating.ratingType === "self" ? <Circle /> : <Star />}
+                emptyIcon={rating.ratingType === "self" ? <Circle /> : <Star />}
+                value={rating.ratingValue}
+                precision={0.5}
+                readOnly
+                sx={{
+                  color: "#f4e900",
+                }}
+              />
+            </Box>
           )}
         </Box>
         <Typography fontSize="15px" color="#898989">
@@ -156,11 +169,21 @@ const PriceTag = ({
   savings: Price | null;
   layoutProps?: BoxProps;
 }) => (
-  <Box {...layoutProps}>
+  <Box
+    {...layoutProps}
+    itemProp="priceSpecification"
+    itemScope
+    itemType="https://schema.org/UnitPriceSpecification"
+  >
     <Typography fontSize="12px">
       1 night total ({displayPrice.currency})
     </Typography>
-    <Typography fontSize="30px" fontWeight="200">
+    <Typography
+      fontSize="30px"
+      fontWeight="200"
+      itemProp="price"
+      content={displayPrice.amount.toString()}
+    >
       {formatPrice(displayPrice)}
     </Typography>
     {savings && (

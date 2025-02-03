@@ -1,11 +1,5 @@
 import { getPropertyResults } from "@/api/client";
-import {
-  Alert,
-  Box,
-  CircularProgress,
-  LinearProgress,
-  Typography,
-} from "@mui/material";
+import { Alert, Box, CircularProgress, Typography } from "@mui/material";
 import { useCallback, useEffect, useState } from "react";
 import { GENERIC_ERROR } from "@/consts";
 import { PropertyResult as PropertyResultType } from "@/types";
