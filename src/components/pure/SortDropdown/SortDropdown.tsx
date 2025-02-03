@@ -19,6 +19,7 @@ export const SortDropdown = ({
       <select
         value={sortDirection}
         onChange={(e) => setSortDirection(e.target.value as SortDirection)}
+        aria-label="Sorting method"
       >
         <option value="descending">Price (high-low)</option>
         <option value="ascending">Price (low-high)</option>

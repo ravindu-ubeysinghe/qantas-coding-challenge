@@ -42,6 +42,7 @@ export const PropertyResult = ({
       gridTemplateColumns={{ sm: "200px 1fr" }}
       columnGap={{ sm: "30px" }}
       rowGap={{ xs: "15px", sm: "0px" }}
+      data-testid="property-result"
       {...layoutProps}
     >
       <Link href={`/hotel/${id}`}>
