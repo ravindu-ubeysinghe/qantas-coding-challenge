@@ -8,10 +8,13 @@ Mockup 👉
 
 ## ⚙️ Requirements for initial set up
 
-- Install the latest node stable version: 22.13.1
+- Set up `git` and clone this repo: https://github.com/ravindu-ubeysinghe/qantas-coding-challenge.git
+- Checkout the `master` branch
+- Install the latest stable Node version: 22.13.1
 - Install `yarn`
 - `cd` into the project directory and run `yarn` to install all the required dependencies
 - Run `yarn dev` to start up the Next.js dev server with HMR
+- Run `yarn test` to run all available test suites
 
 ## 👨‍💻 Technologies/Frameworks used
 
